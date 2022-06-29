@@ -12,23 +12,25 @@ namespace MinesweeperGame
 {
     public partial class Form1 : Form
     {
-        private int a = 10;
+        //private int a = 10;
         private string[,] gameField = new string[10, 10];
-        private Button[,] buttons = new Button[10, 10];
+        private Button[,] superButtons = new SuperButton[10, 10];
+        private PictureBox[,] pictureBoxes = new PictureBox[10, 10];
         private int mineCount = 12;
         private int clickCount = 0;
 
-        private void GenerateField()
+        private void GenerateField(int x, int y)
         {
             Random random = new Random();
             while (mineCount != 0)
             {
                 int i = random.Next(1, 9);  
                 int j = random.Next(1, 9);
-                if (gameField[i, j] != "mine")
+                if (gameField[i, j] != "mine" && i != x && j != y)
                 {
                     gameField[i, j] = "mine";
-                    buttons[i, j].Text = gameField[i, j];
+                    pictureBoxes[i, j].Image = Image.FromFile("Mine.png");
+                    mineCount--;
                 }
             }
         }
@@ -50,21 +52,50 @@ namespace MinesweeperGame
             {
                 for (int j = 1; j <= 8; j++)
                 {
-                    Button button = new Button();
-                    Controls.Add(button);
-                    button.Height = 50;
-                    button.Width = 50;
-                    button.Left = x;
-                    button.Top = y;
-                    button.Visible = true;
-                    button.Enabled = true;
-                    buttons[i, j] = button;
+                    SuperButton superButton = new SuperButton(i, j);
+                    Controls.Add(superButton);
+                    superButton.Height = 50;
+                    superButton.Width = 50;
+                    superButton.Left = x;
+                    superButton.Top = y;
+                    superButton.Visible = true;
+                    superButton.Enabled = true;
+                    superButtons[i, j] = superButton;
+                    superButton.Click += SuperButton_Click;
                     x += 75;
                 }
                 y += 75;
                 x = 25;
             }
-            GenerateField();
+            for (int i = 1; i <= 8; i++)
+            {
+                for (int j = 1; j <= 8; j++)
+                {
+                    PictureBox pictureBox = new PictureBox();
+                    Controls.Add(pictureBox);
+                    pictureBox.Height = 50;
+                    pictureBox.Width = 50;
+                    pictureBox.Left = x;
+                    pictureBox.Top = y;
+                    pictureBox.Visible = false;
+                    pictureBox.Enabled = false;
+                    pictureBoxes[i, j] = pictureBox;
+                    x += 75;
+                }
+                y += 75;
+                x = 25;
+            }
+        }
+
+        private void SuperButton_Click(object sender, EventArgs e)
+        {
+            SuperButton superButton = (SuperButton)sender;
+            if (clickCount == 0)
+                GenerateField(superButton.X, superButton.Y);
+            clickCount++;
+            superButtons[superButton.X, superButton.Y].Enabled = false;
+            superButtons[superButton.X, superButton.Y].Visible = false;
+            pictureBoxes[superButton.X, superButton.Y].Visible = true;
         }
 
         public Form1()

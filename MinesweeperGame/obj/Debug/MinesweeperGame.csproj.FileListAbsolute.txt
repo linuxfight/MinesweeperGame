@@ -1,0 +1,11 @@
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\bin\Debug\MinesweeperGame.exe.config
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\bin\Debug\MinesweeperGame.exe
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\bin\Debug\MinesweeperGame.pdb
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\obj\Debug\MinesweeperGame.csproj.AssemblyReference.cache
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\obj\Debug\MinesweeperGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\obj\Debug\MinesweeperGame.Form1.resources
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\obj\Debug\MinesweeperGame.Properties.Resources.resources
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\obj\Debug\MinesweeperGame.csproj.GenerateResource.cache
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\obj\Debug\MinesweeperGame.csproj.CoreCompileInputs.cache
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\obj\Debug\MinesweeperGame.exe
+C:\Users\kiko1\source\repos\MinesweeperGame\MinesweeperGame\obj\Debug\MinesweeperGame.pdb

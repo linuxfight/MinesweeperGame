@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace MinesweeperGame
 {
     public partial class Form1 : Form
-    { 
+    {
+        private int a = 10;
         private string[,] gameField = new string[10, 10];
         private Button[,] buttons = new Button[10, 10];
         private int mineCount = 12;
